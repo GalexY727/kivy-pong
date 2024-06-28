@@ -8,7 +8,7 @@
             size: self.size   
 
 <PongPaddle>:
-    size: 50, 200
+    size: 30, 200
     canvas:
         Rectangle:
             pos: self.pos
@@ -22,7 +22,7 @@
     canvas:
         Rectangle:
             pos: self.center_x - 5, 0
-            size: 10, self.height
+            size: 5, self.height
     
     Label:
         font_size: 70  
@@ -52,10 +52,10 @@
 
     PongPaddle:
         id: player1
-        x: root.x
+        x: root.x + root.width/20
         center_y: root.center_y
 
     PongPaddle:
         id: computer
-        x: root.width - 50
+        x: root.width - root.width/20 - self.width
         center_y: root.center_y

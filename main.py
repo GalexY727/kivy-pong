@@ -6,7 +6,7 @@ from kivy.vector import Vector
 from kivy.clock import Clock
 from kivy.uix.label import Label
 from kivy.uix.button import Button
-import random
+import math
 
 class PongBall(Widget):
 
@@ -95,7 +95,7 @@ class PongGame(Widget):
         self.player1.bounce_ball(self.ball)
         self.computer.bounce_ball(self.ball)
         
-        computer_speed = clamp((self.ball.velocity_y + self.ball.velocity_x)/2, 2, 7)
+        computer_speed = clamp(math.hypot(self.ball.velocity_y, self.ball.velocity_x)/2, 2, self.height/100)
         if self.ball.y > self.computer.center_y + self.computer.height/2:
             self.computer.center_y += computer_speed
         elif self.ball.y < self.computer.center_y - self.computer.height/2:
