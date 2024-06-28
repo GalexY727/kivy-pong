@@ -5,10 +5,20 @@
     canvas:
         Ellipse:
             pos: self.pos
-            size: self.size          
+            size: self.size   
+
+<PongPaddle>:
+    size: 50, 200
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size   
 
 <PongGame>:
     ball: pong_ball
+    player1: player1
+    computer: computer
+
     canvas:
         Rectangle:
             pos: self.center_x - 5, 0
@@ -18,14 +28,34 @@
         font_size: 70  
         center_x: root.width / 4
         top: root.top - 50
-        text: "0"
+        text: str(root.player1.score)
+        id: player_score
         
     Label:
         font_size: 70  
         center_x: root.width * 3 / 4
         top: root.top - 50
-        text: "0"
+        text: str(root.computer.score)
+        id: computer_score
+
+    Label:
+        font_size: 70
+        center_x: root.width / 2
+        top: root.top - 35
+        text: str(root.winner)
+        color: root.winner_color
+        id: winner
     
     PongBall:
         id: pong_ball
         center: self.parent.center
+
+    PongPaddle:
+        id: player1
+        x: root.x
+        center_y: root.center_y
+
+    PongPaddle:
+        id: computer
+        x: root.width - 50
+        center_y: root.center_y
