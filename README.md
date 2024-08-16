@@ -7,7 +7,7 @@ https://github.com/GalexY727/kivy-pong/assets/65139378/af1499cb-ad6d-4101-8c8f-b
 There are two options to run this program:
 ### 1: Running the executable:
 Launch the .exe inside of ./dist/, and you should be good to go!
-### 2: Manual installation
+### 2: Running from source:
 ```
 git clone <repository>
 pip install requirements.txt
